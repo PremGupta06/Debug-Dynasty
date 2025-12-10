@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CareerAI – Career Chatbot</title>
+  <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <!-- add id="nav-links" so JS can find it -->
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="chat.html" class="active">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html">Results</a>
+           <a href="responses.html" >Responses</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page">
+    <header class="page-header">
+      <div class="page-title">
+        💬 AI Career Mentor
+        <span class="badge">Chatbot</span>
+      </div>
+      <p class="page-subtitle">
+        Ask anything about jobs, roles, skills, roadmaps, interview prep, or how to grow from your current profile.
+      </p>
+    </header>
+
+    <!-- CHAT CARD -->
+    <section class="chat-container">
+      <div class="card">
+        <div class="chat-shell">
+          <div id="chat-messages" class="chat-messages">
+            <div class="chat-bubble ai">
+              Hi! I’m your AI career mentor. Tell me your branch, skill level and goal
+              (e.g. “2nd year CS, want to become a backend developer”).
+            </div>
+          </div>
+
+          <form id="chat-form" class="chat-input-row">
+            <input
+              id="chat-input"
+              type="text"
+              placeholder="Ask about jobs, skills, roadmap, resume improvements..."
+              autocomplete="off"
+            />
+            <button type="submit" id="chat-send-btn">
+              ➤
+            </button>
+          </form>
+
+          <div class="error" id="chat-error"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- your chatbot logic / API calls -->
+  <!-- <script src="main.js"></script> -->
+
+  <!-- NAVBAR SLIDER SCRIPT -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      // close menu when a nav link is clicked (better UX)
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

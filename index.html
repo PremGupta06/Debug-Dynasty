@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocentia – Discover Your Perfect Career</title>
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- =============== NAVBAR =============== -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== HERO SECTION =============== -->
+  <div class="hero-banner">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge">⚙️ AI-Powered Career Guidance</div>
+
+        <h1>
+          Discover Your <br />
+          <span class="highlight">Perfect Career</span>
+        </h1>
+
+        <p class="subtitle">
+          Our AI analyzes your skills, interests, and education to recommend
+          the best career paths tailored just for you.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="login.html" class="btn-gradient stretch">Start Assessment →</a>
+          <!-- <a href="login.html" class="btn-white large stretch">Sign In</a> -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =============== FEATURES =============== -->
+  <section class="features">
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h3>AI Analysis</h3>
+      <p>Advanced algorithms analyze your profile to find your ideal career paths.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Personalized Results</h3>
+      <p>Receive confidence-boosting insights with tailored results.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Learning Paths</h3>
+      <p>Curated learning resources to help you achieve your dream career.</p>
+    </div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <img src="Images/career.png" class="footer-logo" />
+        <h2>Vocentia</h2>
+        <p>AI Career Guidance for Everyone</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="index.html">Dashboard</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>📧 support@vocentia.ai</p>
+        <p>📍 India</p>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2025 Vocentia. All rights reserved. developed b  y Debug Dynasty</p>
+  </footer>
+
+  <!-- =============== NAVBAR SCRIPT =============== -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    navToggle.addEventListener("click", () => {
+      navbarInner.classList.toggle("nav-open");
+    });
+
+    navLinks.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") {
+        navbarInner.classList.remove("nav-open");
+      }
+    });
+  </script>
+
+</body>
+</html>

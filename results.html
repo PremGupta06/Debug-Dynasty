@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerAI – Career Recommendations</title>
+  <link rel="stylesheet" href="results.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html" class="active">Results</a>
+           <a href="responses.html">Responses</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page">
+    <a href="resume.html" class="back-link">
+      &larr; Take another assessment
+    </a>
+
+    <!-- Intro -->
+    <section class="recommendations-intro">
+      <h1>Your Career Recommendations</h1>
+      <p>Based on your skills, interests, and education, here are your top career matches.</p>
+    </section>
+
+    <!-- Profile summary -->
+    <section class="profile-summary-box">
+      <h2>YOUR PROFILE SUMMARY</h2>
+      <div class="summary-details">
+        <div class="summary-item">
+          <h3>Skills:</h3>
+          <p>...</p>
+        </div>
+        <div class="summary-item">
+          <h3>Interests:</h3>
+          <p>...</p>
+        </div>
+        <div class="summary-item">
+          <h3>Education:</h3>
+          <p>...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendations-grid">
+      <!-- Card 1 -->
+      <article class="card recommendation-card high-match">
+        <div class="card-header">
+          <p class="recommendation-number">#1 Recommendation</p>
+          <div class="match-score">Match Score --%</div>
+        </div>
+        <h3 class="career-title">Career Title 1</h3>
+
+        <div class="card-body">
+          <h4>WHY THIS CAREER?</h4>
+          <p>...</p>
+        </div>
+
+        <div class="card-footer">
+          <h4>LEARNING RESOURCES</h4>
+          <ul class="resource-list">
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">📖</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 1</span>
+                  <span class="type">Type 1</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">🎓</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 2</span>
+                  <span class="type">Type 2</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">💻</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 3</span>
+                  <span class="type">Type 3</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+          </ul>
+          <button class="ai-chat-button">Ask AI about this career</button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card recommendation-card medium-match">
+        <div class="card-header">
+          <p class="recommendation-number">#2 Recommendation</p>
+          <div class="match-score">Match Score --%</div>
+        </div>
+        <h3 class="career-title">Career Title 2</h3>
+
+        <div class="card-body">
+          <h4>WHY THIS CAREER?</h4>
+          <p>...</p>
+        </div>
+
+        <div class="card-footer">
+          <h4>LEARNING RESOURCES</h4>
+          <ul class="resource-list">
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">💻</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 4</span>
+                  <span class="type">Type 1</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">🎓</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 5</span>
+                  <span class="type">Type 2</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">🔗</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 6</span>
+                  <span class="type">Type 3</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+          </ul>
+          <button class="ai-chat-button">Ask AI about this career</button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card recommendation-card low-match">
+        <div class="card-header">
+          <p class="recommendation-number">#3 Recommendation</p>
+          <div class="match-score">Match Score --%</div>
+        </div>
+        <h3 class="career-title">Career Title 3</h3>
+
+        <div class="card-body">
+          <h4>WHY THIS CAREER?</h4>
+          <p>...</p>
+        </div>
+
+        <div class="card-footer">
+          <h4>LEARNING RESOURCES</h4>
+          <ul class="resource-list">
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">⚙️</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 7</span>
+                  <span class="type">Type 1</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">☁️</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 8</span>
+                  <span class="type">Type 2</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="resource-link">
+                <span class="resource-icon">📜</span>
+                <span class="resource-text">
+                  <span class="title">Resource Title 9</span>
+                  <span class="type">Type 3</span>
+                </span>
+                <span class="external-icon">↗</span>
+              </a>
+            </li>
+          </ul>
+          <button class="ai-chat-button">Ask AI about this career</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Bottom actions -->
+    <div class="action-buttons-container">
+      <button class="retake-button">Retake Assessment</button>
+      <button class="chat-button" onclick="window.location.href='chat.html'">
+        <span class="icon">💬</span> Chat with Career Guide
+      </button>
+    </div>
+  </main>
+
+  <!-- NAVBAR SLIDER SCRIPT -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

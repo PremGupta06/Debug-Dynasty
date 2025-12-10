@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerAI – Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <!-- <a href="resume.html">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html">Results</a> -->
+        <a href="login.html">Login</a>
+        <a href="signup.html" class="active">Signup</a>
+        <!-- <a href="#" id="logout-link">Logout</a> -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== SIGN UP CARD =============== -->
+  <section class="signup-section">
+    <div class="signup-card">
+      <h2>Create Your Account</h2>
+      <p class="subtitle">Start your AI-powered career journey today</p>
+
+      <form id="signup-form">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Create a password" required>
+        </div>
+
+        <button type="submit" class="btn-gradient">Create Account</button>
+
+        <p class="signin-text">
+          Already have an account? <a href="login.html">Sign In</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- NAVBAR SLIDER SCRIPT -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

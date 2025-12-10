@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CareerAI – Subscription</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="subscription.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html" class="active">Subscription</a>
+        <a href="results.html">Results</a>
+           <a href="responses.html" >Responses</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page">
+    <header class="page-header centered-header">
+      <h1 class="page-title">
+        💼 Plans & Subscription
+        <span class="badge">Hackathon demo</span>
+      </h1>
+      <p class="page-subtitle">
+        For the hackathon, we simulate payment: clicking “Upgrade to Pro” just switches your account to Pro mode on the backend.
+      </p>
+    </header>
+
+    <!-- PLAN COMPARISON -->
+    <section class="plan-comparison-section">
+      <div class="card comparison-grid">
+        <div class="plan-card free-plan">
+          <h3 class="history-section-title">Free</h3>
+          <ul class="plan-list">
+            <li>Up to <strong>3 resume scans</strong></li>
+            <li>Up to <strong>20 chat messages</strong></li>
+            <li>No history storage</li>
+            <li>Great for quick tests and first-time users</li>
+          </ul>
+        </div>
+
+        <div class="plan-card pro-plan">
+          <h3 class="history-section-title">Pro</h3>
+          <ul class="plan-list">
+            <li><strong>Unlimited</strong> resume scans</li>
+            <li><strong>Unlimited</strong> chat messages</li>
+            <li>Full <strong>resume & chat history</strong></li>
+            <li>Perfect when you’re actively preparing for placements</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT PLAN CARD -->
+    <section class="current-plan-section">
+      <div class="card-soft current-plan-card">
+        <h2 class="card-title">Your plan</h2>
+        <p class="card-meta">
+          This information is loaded from the logged-in user (stored in localStorage).
+        </p>
+
+        <p class="current-status">
+          Current status:
+          <span id="current-plan" class="badge badge-outline">FREE</span>
+        </p>
+
+        <button id="upgrade-btn" class="upgrade-btn">
+          🚀 Upgrade to Pro (demo)
+        </button>
+
+        <div class="error" id="subscription-error"></div>
+        <p class="info" id="subscription-message"></p>
+
+        <p class="card-meta small-note">
+          In a real product, this button would open Razorpay/Stripe checkout.
+          For the hackathon, the backend simply flips your plan to <strong>pro</strong>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- <script src="main.js"></script> -->
+
+  <!-- NAVBAR SLIDER SCRIPT -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

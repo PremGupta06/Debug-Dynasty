@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerAI - Sign In</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <!-- <a href="resume.html">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html">Results</a> -->
+        <a href="login.html" class="active">Login</a>
+        <!-- <a href="#" id="logout-link">Logout</a> -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============== SIGN IN CARD =============== -->
+  <section class="auth-section">
+    <div class="auth-card">
+      <img src="Images/etiquette.png" class="auth-icon" alt="Login Icon">
+
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to access your career assessments</p>
+
+      <!-- Google Button -->
+      <button class="google-btn">
+        <img src="Images/google.png" alt="Google logo">
+        Continue with Google
+      </button>
+
+      <div class="divider">
+        <span>OR CONTINUE WITH EMAIL</span>
+      </div>
+
+      <!-- Form -->
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="•••••••" required>
+
+        <button type="submit" class="submit-btn">Sign In</button>
+      </form>
+
+      <p class="bottom-text">
+        Don't have an account?
+        <a href="signup.html" class="link">Sign up</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- NAVBAR SLIDER SCRIPT -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

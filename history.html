@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vocentia – Assessment History</title>
+  <link rel="stylesheet" href="history.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <!-- add id for JS -->
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html" class="active">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html">Results</a>
+           <a href="responses.html">Responses</a>
+        <!-- <a href="#" id="logout-link">Logout</a> -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="history-wrapper">
+    <!-- Header section -->
+    <header class="history-header">
+      <div class="history-icon">
+        <span>&#8635;</span>
+      </div>
+      <div>
+        <h1 class="history-title">Assessment History</h1>
+        <p class="history-subtitle">
+          View your past career assessments
+        </p>
+      </div>
+    </header>
+
+    <!-- Error / info messages -->
+    <p id="history-error" class="history-error"></p>
+
+    <!-- History cards from backend will be injected here -->
+    <section id="history-list"></section>
+  </main>
+
+  <!-- Existing JS (API calls etc.) -->
+  <!-- <script src="main.js"></script> -->
+
+  
+  <!-- Navbar slide script -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

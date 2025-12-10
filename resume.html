@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerAI – Resume Analyzer</title>
+  <link rel="stylesheet" href="resume.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html">Results</a>
+        <a href="responses.html">Responses</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page">
+    <header class="page-header">
+      <h1 class="page-title">
+        📄 Resume Analyzer
+        <span class="badge">AI-powered</span>
+      </h1>
+      <p class="page-subtitle">
+        Upload your resume and get smart suggestions: job roles, skills, gaps, and a 1‑year learning roadmap.
+      </p>
+    </header>
+
+    <section class="grid-2">
+      <!-- Left: upload form -->
+      <div class="card">
+        <h2 class="card-title">Upload your resume</h2>
+        <p class="card-meta">
+          Supported (for now): .txt / basic PDF. You can scan up to
+          <strong>3 resumes</strong> on the free plan.
+        </p>
+
+        <form id="resume-form">
+          <label for="resume-file">
+            Resume file
+          </label>
+          <input id="resume-file" type="file" name="resume" required />
+
+          <div class="info" id="resume-info"></div>
+          <div class="error" id="resume-error"></div>
+
+          <button type="submit">
+            🔍 Upload & Analyze
+          </button>
+        </form>
+      </div>
+
+      <!-- Right: quick summary -->
+      <div class="card-soft">
+        <h3 class="card-title">Tips for best results</h3>
+        <ul class="plan-list">
+          <li>Use a recent resume with your latest projects and internships.</li>
+          <li>Keep the file under 2 MB for faster analysis.</li>
+          <li>Technical roles work best: Web Dev, App Dev, ML, Data, Cloud, etc.</li>
+        </ul>
+        <p class="card-meta">
+          Behind the scenes: we send your resume text to an AI model that extracts skills,
+          maps them to careers, and builds a learning path.
+        </p>
+      </div>
+    </section>
+
+    <!-- RESULT SECTION -->
+    <section class="result-section">
+      <div class="card-soft" id="resume-result-wrapper" style="display: none;">
+        <h2 class="card-title">Analysis result</h2>
+        <p class="card-meta">
+          This is personalized based on your resume. Save it or ask follow-up questions in the Chat page.
+        </p>
+
+        <div class="grid-2-balanced" id="resume-result">
+          <!-- Filled by JS using #resume-roles, #resume-skills etc. -->
+          <div>
+            <h3 class="history-section-title">Suggested Job Roles</h3>
+            <div id="resume-roles" class="list-pills"></div>
+
+            <h3 class="history-section-title mt-10">Detected Skills</h3>
+            <div id="resume-skills" class="list-pills"></div>
+          </div>
+          <div>
+            <h3 class="history-section-title">Missing / Recommended Skills</h3>
+            <div id="resume-missing" class="list-pills"></div>
+
+            <h3 class="history-section-title mt-10">Experience Level</h3>
+            <p id="resume-exp" class="exp-text"></p>
+          </div>
+        </div>
+
+        <div class="roadmap-block">
+          <h3 class="history-section-title">1‑Year Learning Roadmap</h3>
+          <ul id="resume-roadmap" class="plan-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <script src="main.js"></script> -->
+
+  <!-- NAVBAR SLIDER SCRIPT -->
+  <script>
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const navbarInner = document.querySelector(".navbar-inner");
+
+    if (navToggle && navLinks && navbarInner) {
+      navToggle.addEventListener("click", () => {
+        navbarInner.classList.toggle("nav-open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navbarInner.classList.remove("nav-open");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

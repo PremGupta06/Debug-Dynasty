@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerAI – Assessment</title>
+    <link rel="stylesheet" href="responses.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="Images/career.png" alt="Career Icon" class="logo-icon" />
+          <div class="brand-name">Vocentia</div>
+        </div>
+      </div>
+
+      <!-- mobile menu button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="resume.html">Resume</a>
+        <a href="chat.html">Chat</a>
+        <a href="history.html">History</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="results.html" >Results</a>
+        <a href="responses.html" class="active">Responses</a>
+      </nav>
+    </div>
+  </header>
+
+<!-- MULTI-STEP FORM WRAPPER -->
+<div class="wrapper">
+
+    <!-- PROGRESS BAR -->
+    <div class="progress">
+        <div class="step" id="p1"></div>
+        <div class="step" id="p2"></div>
+        <div class="step" id="p3"></div>
+    </div>
+
+    <!-- ========== STEP 1: SKILLS ========== -->
+    <section class="card active" id="step1">
+        <div class="card-icon">💡</div>
+        <h2>Your Skills</h2>
+        <p class="subtitle">What technical and soft skills do you have?</p>
+
+        <textarea placeholder="e.g., Python, data analysis, teamwork, communication..."></textarea>
+
+        <div class="btn-row">
+            <button disabled class="btn disabled">Back</button>
+            <button class="btn next" onclick="nextStep(1)">Next →</button>
+        </div>
+
+        <p class="step-count">Step 1 of 3</p>
+    </section>
+
+    <!-- ========== STEP 2: INTERESTS ========== -->
+    <section class="card" id="step2">
+        <div class="card-icon">💙</div>
+        <h2>Your Interests</h2>
+        <p class="subtitle">What topics excite you?</p>
+
+        <textarea placeholder="e.g., building apps, cybersecurity, AI, solving puzzles..."></textarea>
+
+        <div class="btn-row">
+            <button class="btn back" onclick="prevStep(2)">← Back</button>
+            <button class="btn next" onclick="nextStep(2)">Next →</button>
+        </div>
+
+        <p class="step-count">Step 2 of 3</p>
+    </section>
+
+    <!-- ========== STEP 3: EDUCATION ========== -->
+    <section class="card" id="step3">
+        <div class="card-icon">🎓</div>
+        <h2>Your Education</h2>
+        <p class="subtitle">What's your educational background?</p>
+
+        <textarea placeholder="e.g., BCA, BSc CS, Diploma in IT..."></textarea>
+
+        <div class="btn-row">
+            <button class="btn back" onclick="prevStep(3)">← Back</button>
+            <button class="btn submit">Get Recommendations →</button>
+        </div>
+
+        <p class="step-count">Step 3 of 3</p>
+    </section>
+
+</div>
+
+<script>
+    function nextStep(n) {
+        document.getElementById(`step${n}`).classList.remove("active");
+        document.getElementById(`step${n+1}`).classList.add("active");
+
+        document.getElementById(`p${n}`).classList.add("done");
+        document.getElementById(`p${n+1}`).classList.add("active");
+    }
+
+    function prevStep(n) {
+        document.getElementById(`step${n}`).classList.remove("active");
+        document.getElementById(`step${n-1}`).classList.add("active");
+
+        document.getElementById(`p${n}`).classList.remove("active");
+        document.getElementById(`p${n-1}`).classList.add("active");
+    }
+</script>
+
+</body>
+</html>

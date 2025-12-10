@@ -1,0 +1,365 @@
+/* ==============================
+   subscription.css
+   ============================== */
+
+/* THEME */
+:root {
+  --gradient-primary: linear-gradient(135deg, #0066FF 0%, #39B8B8 100%);
+  --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #F5F8FA 100%);
+  --text-muted: #6b7280;
+  --border-soft: rgba(148, 163, 184, 0.35);
+  --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.12);
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* make gradient fill full screen */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #020617;
+
+  /* 🔹 Clean full-screen gradient, no footer-band look */
+  background-image: linear-gradient(to right top, #ffffff, #f3f8ff, #def4ff, #c0f2ff, #9ff0ff, #8be8f4, #76e0e8, #61d8db, #4dc8d3, #3ab9ca, #25a9c1, #0a9ab7);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ==============================
+   NAVBAR (same pattern as others)
+   ============================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.navbar-inner {
+  max-width: 1040px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* brand + logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* nav links */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1e293b;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: 0.15s;
+}
+
+.nav-links a:hover {
+  background: #e5edff;
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+.nav-links a.active {
+  background: var(--gradient-primary);
+  color: #ffffff;
+}
+
+/* burger button */
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+  .nav-links {
+    justify-content: flex-end;
+  }
+}
+
+/* mobile slider */
+@media (max-width: 768px) {
+  .navbar-inner {
+    height: 60px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px 18px 14px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-soft);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+    flex-direction: column;
+    gap: 6px;
+    transform: translateY(-130%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+  }
+
+  .navbar-inner.nav-open .nav-links {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+  }
+}
+
+/* ==============================
+   PAGE LAYOUT & HEADER
+   ============================== */
+
+.page {
+  max-width: 1040px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  color: #020617; /* use transparent for full gradient text */
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  border: 1px solid #cbd5f5;
+  background: #e5edff;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* title responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.85rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.25rem;
+    flex-direction: column;
+  }
+}
+
+/* ==============================
+   PLAN COMPARISON
+   ============================== */
+
+.plan-comparison-section {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--gradient-card);
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+/* 2-column on desktop, stack on mobile */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plan-card {
+  padding: 6px 4px;
+}
+
+.history-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.plan-list {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-left: 18px;
+}
+
+.plan-list li {
+  margin-bottom: 4px;
+}
+
+/* optional color nuance */
+.free-plan .history-section-title {
+  color: #0f172a;
+}
+
+.pro-plan .history-section-title {
+  color: #2563eb;
+}
+
+/* ==============================
+   CURRENT PLAN CARD
+   ============================== */
+
+.current-plan-section {
+  margin-top: 14px;
+}
+
+.card-soft {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* current status line */
+.current-status {
+  font-size: 0.82rem;
+  margin: 10px 0;
+}
+
+.badge-outline {
+  border-color: #cbd5f5;
+  background: #ffffff;
+}
+
+/* button */
+.upgrade-btn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--gradient-primary);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 102, 255, 0.35);
+}
+
+.upgrade-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 102, 255, 0.45);
+}
+
+/* messages */
+.error {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #b91c1c;
+}
+
+.info {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #2563eb;
+}
+
+.small-note {
+  margin-top: 12px;
+}
