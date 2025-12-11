@@ -49,10 +49,19 @@
           <input id="name" type="text" placeholder="Enter your name" required>
         </div>
 
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="Enter your email" required>
-        </div>
+  <label for="email">Gmail address</label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    placeholder="you@gmail.com"
+    pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
+    required
+    title="Please enter a valid Gmail address (example: you@gmail.com)"
+  />
+  <button type="submit">Submit</button>
+
+
 
         <div class="input-group">
           <label for="password">Password</label>
@@ -90,5 +99,6 @@
   </script>
 </body>
 </html>
+
 
 
